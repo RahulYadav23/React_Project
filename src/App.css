@@ -1,38 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+ 
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Banner */
+.banner-container {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  background:black;
+  overflow: hidden;
+  z-index: -1;
+}
+.banner-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.banner-text-container {
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.banner-text {
+  font-size: 3rem;
+}
+
+.banner-sub-text {
+  font-weight: 300;
+}
+
+/*   about search     */
+.search-input {
+  border: none;
+  height: 1.5rem;
+  width: 400px;
+  font-size: 1rem;
+  padding-right: 1rem;
+  border-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+.input-div{
+  background-color: black;
+}
+/*   info display     */
+
+
+.animeInfo{
+  width: 300px;
+  height: 100%;
+  background-color: rgb(121, 152, 179);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+.anime-row{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.anime-row .row{
+   display: inline-flex;
+   gap: 20px;
+   margin-left:20rem;
+   flex-flow: row wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container{
+  width: 100%;
+  margin: 50px ;
+  display: flex;
+  flex-flow:  row wrap;
 }
