@@ -31,17 +31,18 @@ function App() {
     setMyAnime(newArray);
   };
 
-  const getData = async () => {
-    const res = await fetch(
-      `https://api.jikan.moe/v4/anime?q=${search}&limit=20`
-    );
-    const resData = await res.json();
-    console.log(resData.data);
-    setAnimeData(resData.data);
-  };
+ 
 
   useEffect(() => {
-    getData();
+    const getData = async () => {
+      const res = await fetch(
+        `https://api.jikan.moe/v4/anime?q=${search}&limit=20`
+      );
+      const resData = await res.json();
+      console.log(resData.data);
+      setAnimeData(resData.data);
+    };
+    getData(); 
   }, [search]);
 // apply debounce for query
 
@@ -78,7 +79,7 @@ function App() {
           placeholder="Search..."
           onChange={optimizedSearch}
         />
-      </div>
+      </div> 
 
       <div className="container">
         <div className="animeInfo">
