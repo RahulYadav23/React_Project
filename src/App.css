@@ -2,21 +2,11 @@
   padding: 0;
   margin: 0;
  
-}
+ }
 .App {
   text-align: center;
 }
 
-.display-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flex-column {
-  flex-direction: column;
-}
-
-/* Banner */
 .banner-container {
   position: relative;
   height: 250px;
@@ -31,18 +21,7 @@
   object-fit: contain;
 }
 
-.banner-text-container {
-  position: absolute;
-  color: rgb(255, 255, 255);
-}
 
-.banner-text {
-  font-size: 3rem;
-}
-
-.banner-sub-text {
-  font-weight: 300;
-}
 
 /*   about search     */
 .search-input {
@@ -57,34 +36,7 @@
 .input-div{
   background-color: black;
 }
-/*   info display     */
 
 
-.animeInfo{
-  width: 300px;
-  height: 100%;
-  background-color: rgb(121, 152, 179);
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 5;
-}
 
-.anime-row{
-  display: flex;
-  flex-direction: column;
-}
 
-.anime-row .row{
-   display: inline-flex;
-   gap: 20px;
-   margin-left:20rem;
-   flex-flow: row wrap;
-}
-
-.container{
-  width: 100%;
-  margin: 50px ;
-  display: flex;
-  flex-flow:  row wrap;
-}

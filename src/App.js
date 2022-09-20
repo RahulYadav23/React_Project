@@ -4,6 +4,9 @@ import Banner from "./Components/Banner";
 import AnimeList from "./Components/AnimeList";
 import bannerURL from "./BannerURL5.jpg";
 import AnimeInfo from "./Components/AnimeInfo";
+import {Route,Switch,Redirect} from 'react-router-dom';
+import SelectorHeader from "./Components/SelectorHeader";
+
 function App() {
   const [animeData, setAnimeData] = useState();
   const [banner] = useState(bannerURL);
@@ -70,8 +73,9 @@ function App() {
   //
   return (
     <div className="App">
+      
       <Banner bannerLink={banner}></Banner>
-
+     
       <div className="input-div">
         <input
           className="search-input"
@@ -80,37 +84,37 @@ function App() {
           onChange={optimizedSearch}
         />
       </div> 
-
-      <div className="container">
-        <div className="animeInfo">
-          {animeInfo && <AnimeInfo data={animeInfo} />}
-        </div>
-      
-        <div className="anime-row">
-          <div className="row">
-            <AnimeList
+       <SelectorHeader />
+      <Switch>
+    
+        <Route exact path='/' >
+          <Redirect to='/welcome' />
+        </Route>
+        
+        <Route path='/welcome'>
+           <AnimeList
               Animedata={animeData}
               setAnimeInfo={setAnimeInfo}
               handleAddTo={addTo}
               whattodo={true}
             ></AnimeList>
-          </div>
-          <br/>
-          <br/>
-          <h2>My List</h2>
-          <br/>
-          <br/>
-          <div className="row">
+        </Route>
+       
+          
+        <Route path='/fav'>
              <AnimeList
               Animedata={myanime}
               setAnimeInfo={setAnimeInfo}
               handleAddTo={removeAnime}
               whattodo={false}
             ></AnimeList>
-          </div>
-        </div>
-      </div>
+        </Route>
+        <Route path='/animeinfo'>
+        <AnimeInfo data={animeInfo} />
+        </Route>
+      </Switch>
     </div>
+   
   );
 }
 
